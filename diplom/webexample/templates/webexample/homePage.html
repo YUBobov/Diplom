@@ -1,0 +1,35 @@
+<!--Унаследовали всё от wraper.html-->
+<!-- extends "webexample/wraper.html" 
+С помощью метода extends берём один html файл и вкладываем в другой html файл
+Но так как у нас одна html страница, то проще делать в одном файле-->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подбор марки кабеля</title>
+</head>
+<body>
+    <!--Блок для шапки-->
+    <div style="background-color: gray">
+        <!--встраивание отдельного куска кода, стили передаются вместе с кодом-->  
+        {% include "webexample/includes/head_board.html" %}
+    </div>
+    <!--Блок для карты с полями-->
+    <div>
+        <!--Блок для карты-->
+       <div>
+            <p>Это просто для прикола пока что </br>
+            Я просто не знаю как в html лучше блоки организовать </br>
+            Поэтому пока так просто сделал </br>
+            Ну и как-то шаблоны потом попробую использовать, кроме шапки </p>
+       </div>
+       <!--Блок для полей-->
+       <div>
+           <p>Парамтеры поиска</p>
+            <p>Длина кабеля: <input type="text"></p>
+            <p>Тип кабеля: <input type="text"></p>
+       </div>
+    </div>
+</body>
+</html>
