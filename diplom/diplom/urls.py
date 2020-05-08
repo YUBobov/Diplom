@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 urlpatterns = [
     #Ссылка на приложение для администрирования сайта
     path('admin/', admin.site.urls),
     #Создаём ссылку на приложение webexample (открывается шаблон основной страницы (ссылк первого уровня))
     path('', include('webexample.urls'))
-]
+] + static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)
