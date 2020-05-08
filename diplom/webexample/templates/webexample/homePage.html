@@ -8,17 +8,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Подбор марки кабеля</title>
+    <script src="https://api-maps.yandex.ru/2.0-stable/?apikey=24998db7-aa04-4bf2-a7e0-cab9f2b666dd&load=package.full&lang=ru-RU" type="text/javascript"></script>
     
 </head>
 <body>
+
+  
     <!--Блок для шапки-->
     <div style="background-color: gray">
         <!--встраивание отдельного куска кода, стили передаются вместе с кодом-->  
         {% include "webexample/includes/head_board.html" %}
     </div>
     <!--Блок для карты с полями-->
+    
+    <script src = "YandexApi.js" type="text/javascript"></script>
     <div>
-        <!--Блок для карты-->
+        <div id="map" class="map" style="width: 600px; height: 400px"></div>
+               <!--Блок для карты-->
        <div>
             <p>Это просто для прикола пока что </br>
             Я просто не знаю как в html лучше блоки организовать </br>
@@ -26,11 +32,35 @@
             Ну и как-то шаблоны потом попробую использовать, кроме шапки </p>
        </div>
        <!--Блок для полей-->
-       <div>
-           <p>Парамтеры поиска</p>
-            <p>Длина кабеля: <input type="text"></p>
-            <p>Тип кабеля: <input type="text"></p>
-       </div>
+       <div class = "sidebar">
+           <h2>Параметры поиска</h2>
+           <form method = "POST" action="#" id = "search_form">
+                <p>Подкатегории типов кабеля: <select name="types">
+                    <option value="1">FTTx</option>
+                    <option value="2">Подвесной самонесущий, ADSS</option>
+                    <option value="3">Подвесной, тип-8</option>
+                    <option value="4">В канализацию</option>
+                    <option value="5">В грунт</option>
+                    <option value="6">Распредилительный</option>
+                    <option value="7">Огнестойкий</option>
+                    <option value="8">Универсальный</option>
+                </select> </p>
+              <p>Количество волокон: <select name="vol">
+                    <option value="1">4</option>
+                    <option value="2">8</option>
+                    <option value="3">16</option>
+                    <option value="4">32</option>
+                    <option value="5">64</option>
+                </select></p>
+              <p>Количество кН: <select name="kn">
+                    <option value="1">1</option>
+                    <option value="2">1,4</option>
+                    <option value="2">3,5</option>
+                    <option value="2">10</option>
+                </select></p>
+              <input type="submit" class = "btn" value = "Вывести"/>
+            </form>
+     </div>
     </div>
 </body>
 </html>
