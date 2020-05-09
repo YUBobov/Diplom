@@ -1,0 +1,43 @@
+{% block content %}
+ 
+<div id="map" class="map" ></div>
+               <!--Блок для карты-->
+       <!--Блок для полей-->
+<div class = "sidebar">
+   <h2>Параметры поиска</h2>
+   <form method = "POST" action="#" id = "search_form" >
+   	<div class= "test">
+   		<div class="field">
+        <p>Подкатегории типов кабеля:</p> <select name="types">
+            <option value="1">FTTx</option>
+            <option value="2">Подвесной самонесущий, ADSS</option>
+            <option value="3">Подвесной, тип-8</option>
+            <option value="4">В канализацию</option>
+            <option value="5">В грунт</option>
+            <option value="6">Распредилительный</option>
+            <option value="7">Огнестойкий</option>
+            <option value="8">Универсальный</option>
+        </select> 
+        </div>
+		<div class="field">
+        <p>Количество волокон:</p> <select name="vol">
+            <option value="1">4</option>
+            <option value="2">8</option>
+            <option value="3">16</option>
+            <option value="4">32</option>
+            <option value="5">64</option>
+        </select>
+        </div>
+        <div class="field">
+      <p>Количество кН:</p> <select name="kn">
+            <option value="1">1</option>
+            <option value="2">1,4</option>
+            <option value="2">3,5</option>
+            <option value="2">10</option>
+        </select></div>
+        <input type="button" id = "btn" value = "Вывести"  class = "button"/>
+      </div>
+      
+    </form>
+</div>
+{% endblock %}

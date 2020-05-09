@@ -5,7 +5,7 @@ ymaps.ready(init);
 
 function init() {
 	//конструктор
-	var map = new ymaps.Map('map', {
+	let map = new ymaps.Map('map', {
 		center: [56.84, 60.61], // центр карты
 		zoom: 15
 	});
@@ -16,4 +16,35 @@ function init() {
 	//Для измерения расстояния
 	map.controls.add('mapTools');
 	map.controls.add('searchControl');
+	var button = document.getElementById("btn");
+	//button.onclick = dist;
+	//Функция подсчета расстояния карта
+	function dist () {
+	    console.log(map.behaviors.get('ruler').geometry.getCoordinates());
+	    line = map.behaviors.get('ruler').geometry.getCoordinates();
+	    console.log(line.length);
+	    dista = 0;
+	    for (let i = 0; i < line.length-1; i++) {
+	    		dista += ymaps.coordSystem.geo.getDistance(line[i],line[i+1]);
+	    		//console.log(dista);
 }
+	
+}
+}
+
+/*
+route.model.events.add('requestsuccess', function () {
+
+            var activeRoute = route.getActiveRoute();
+            if (activeRoute) {
+                // Получим протяженность маршрута.
+                var length = route.getActiveRoute().properties.get("distance")
+                print(length.value)
+            }
+        });*/
+//print(Map.baloon.getData.value())  
+
+
+
+
+
