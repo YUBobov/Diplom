@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from django.core.management.base import BaseCommand
 from webexample.models import FTTx
+from webexample.models import ADSS
 
 #URL = 'https://shop.nag.ru/catalog/01919.opticheskij-kabel/08679.fttx?count=20&default_view=2&filter_147_1=true&in_stock=&page=1&sort=popularity_desc'
 #URL1 = 'https://shop.nag.ru/catalog/01919.opticheskij-kabel/06006.podvesnoj-samonesuschij-adss?count=20&default_view=2&filter_147_1=true&filter_148_0,6=true&in_stock=&page=1&sort=popularity_desc'
@@ -105,7 +106,23 @@ def parse_ADSS():
                 cabel_ADSS.extend(get_content(html.text, volokno))
         else:
             print('Error')
-    print(cabel_ADSS)
+    for i in range(0, len(cabel_ADSS)):
+       try:
+           adss = ADSS.objects.get(link = cabel_ADSS[i]['link'])
+           adss.name = cabel_ADSS[i]['name']
+           adss.volokno = int(cabel_ADSS[i]['volokna'])
+           adss.kN = cabel_ADSS[i]['kN']
+           adss.price = int(cabel_ADSS[i]['price'])
+           adss.save()
+       except ADSS.DoesNotExist:
+           adss = ADSS(
+                name = cabel_ADSS[i]['name'],
+                volokno = int(cabel_ADSS[i]['volokna']),
+                kN = cabel_ADSS[i]['kN'],
+                price = int(cabel_ADSS[i]['price']),
+                link = cabel_ADSS[i]['link'],
+            ).save()
+    print(f'cabel {adss}')
 
 
 #класс команды
@@ -114,4 +131,4 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         parse_FTTx()
-        #parse_ADSS()
+        parse_ADSS()
