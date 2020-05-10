@@ -1,43 +1,49 @@
 {% block content %}
- 
+ <!--Блок для карты-->
 <div id="map" class="map" ></div>
-               <!--Блок для карты-->
+               
        <!--Блок для полей-->
 <div class = "sidebar">
    <h2>Параметры поиска</h2>
-   <form method = "POST" action="#" id = "search_form" >
+   <!--В методе actions прописана ссылка для перехода страницы по атрибуту name с помощью логики Django-->
+   <form method = "POST" action="{% url 'kabels' %}" id = "search_form" >
+    <!--Токен безопасности, благодаря которому Django определяет, что данные были внесены с этого сайта-->
+    {% csrf_token %}
    	<div class= "test">
    		<div class="field">
         <p>Подкатегории типов кабеля:</p> <select name="types">
-            <option value="1">FTTx</option>
-            <option value="2">Подвесной самонесущий, ADSS</option>
-            <option value="3">Подвесной, тип-8</option>
-            <option value="4">В канализацию</option>
-            <option value="5">В грунт</option>
-            <option value="6">Распредилительный</option>
-            <option value="7">Огнестойкий</option>
-            <option value="8">Универсальный</option>
+            <!--тут потом нужно будет в value названия таблиц прописать-->
+            <option value="FTTx">FTTx</option>
+            <option value="ADSS">Подвесной самонесущий, ADSS</option>
+            <option value="Подвесной, тип-8">Подвесной, тип-8</option>
+            <option value="В канализацию">В канализацию</option>
+            <option value="В грунт">В грунт</option>
+            <option value="Распредилительный">Распредилительный</option>
+            <option value="Огнестойкий">Огнестойкий</option>
+            <option value="Универсальный">Универсальный</option>
         </select> 
         </div>
 		<div class="field">
         <p>Количество волокон:</p> <select name="vol">
-            <option value="1">4</option>
-            <option value="2">8</option>
-            <option value="3">16</option>
-            <option value="4">32</option>
-            <option value="5">64</option>
+            <option value="4">4</option>
+            <option value="8">8</option>
+            <option value="16">16</option>
+            <option value="32">32</option>
+            <option value="64">64</option>
         </select>
         </div>
         <div class="field">
       <p>Количество кН:</p> <select name="kn">
             <option value="1">1</option>
-            <option value="2">1,4</option>
-            <option value="2">3,5</option>
-            <option value="2">10</option>
+            <option value="1,4">1,4</option>
+            <option value="3,5">3,5</option>
+            <option value="10">10</option>
         </select></div>
-        <input type="button" id = "btn" value = "Вывести"  class = "button"/>
+        <!--После нажатия проиходит переадресация на страницу с выводом кабелей-->
+        <input type="submit" id = "btn" value = "Вывести"  class = "button" />
+        
       </div>
-      
+
     </form>
 </div>
 {% endblock %}
