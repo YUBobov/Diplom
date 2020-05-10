@@ -2,6 +2,7 @@ from django.db import models
 
 
 class FTTx(models.Model):
+    objects = models.Manager() #Параметр для работы с объектами модели
     name = models.TextField(
         verbose_name='Название',
     )
@@ -28,6 +29,7 @@ class FTTx(models.Model):
 
 
 class ADSS(models.Model):
+    objects = models.Manager() #Параметр для работы с объектами модели
     name = models.TextField(
         verbose_name='Название',
     )
