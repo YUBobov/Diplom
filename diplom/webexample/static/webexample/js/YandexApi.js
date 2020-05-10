@@ -16,8 +16,8 @@ function init() {
 	//Для измерения расстояния
 	map.controls.add('mapTools');
 	map.controls.add('searchControl');
-	var button = document.getElementById("btn");
-	//button.onclick = dist;
+	var button1 = document.getElementById("btn");
+	button1.onclick = dist;
 	//Функция подсчета расстояния карта
 	function dist () {
 	    console.log(map.behaviors.get('ruler').geometry.getCoordinates());
@@ -26,7 +26,7 @@ function init() {
 	    dista = 0;
 	    for (let i = 0; i < line.length-1; i++) {
 	    		dista += ymaps.coordSystem.geo.getDistance(line[i],line[i+1]);
-	    		//console.log(dista);
+	    		console.log(dista);
 }
 	
 }
