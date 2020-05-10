@@ -8,10 +8,38 @@
 <div>
     <!--Цикл идёт по отдельной записи в таблице bd
     С помощью логики Django происходит обращение к необходимому атрибуту каждой записи в цикле-->
-    <h1><a href="{{ kab.link }}" >{{ kab.name }}</a></h1>
-    <p> {{ kab.volokno }} </p>
-    <p> {{ kab.price }} </p>
+    
 </div>
+<!--
+<div class="income">
+	<div class="income_list">
+		<h1><a href="{{ kab.link }}" >{{ kab.name }}</a></h1>
+	    <p> {{ kab.volokno }} </p>
+	    <p> {{ kab.price }} </p>
+	</div>
+</div>
+-->
+<!--<h2 class="icome__title">Результаты поиска</h2>-->
+<div class="container clearfix">
+
+                <div class="income">
+                    
+                    
+                    <div class="income__list">
+                       
+       
+                        <div class="item clearfix" id="income-0">
+                            <div class="item__description"><h1><a href="{{ kab.link }}" >{{ kab.name }}</a></h1></div>
+                            <div class="right clearfix">
+                                <div class="item__value">{{ kab.price }} </div>
+                                <div class="item__delete">
+                                    <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div>
+                            </div>
+                        </div>
+</div>
+</div>
+
+
 {%  endfor %}
 <!--Если соответсвий найдено не было-->
 {% else %}
