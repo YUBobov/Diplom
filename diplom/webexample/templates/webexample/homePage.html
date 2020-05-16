@@ -9,33 +9,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Подбор марки кабеля</title>
+    <!--Bootstrap css-->
+    <link href="{% static 'webexample/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'webexample/css/bootstrap-grid.min.css' %}" rel="stylesheet">
+    <link href="{% static 'webexample/css/bootstrap-reboot.min.css' %}" rel="stylesheet">
+    <!--Yandex API-->
     <script src="https://api-maps.yandex.ru/2.0-stable/?apikey=24998db7-aa04-4bf2-a7e0-cab9f2b666dd&load=package.full&lang=ru-RU" type="text/javascript"></script> 
+    <!-- Yandex js-->
     <script type="text/javascript" src="{% static 'webexample/js/YandexApi.js' %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'webexample/CSS/style_head.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'webexample/CSS/style_main_block.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'webexample/CSS/search_style.css' %}">
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
-    
+    <link rel="stylesheet" type="text/css" href="{% static 'webexample/CSS/search_style.css' %}">
 </head>
 
 <body>
-    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src=" {% static 'webexample/js/bootstrap.min.js' %} " ></script>
+    <script src=" {% static 'webexample/js/bootstrap.bundle.min.js' %} " ></script>
+    <div >   
     <!--Блок для шапки-->
-    <div style="background-color: gray">
+    
+        
         <!--встраивание отдельного куска кода, стили передаются вместе с кодом--> 
         <!--Шапка сайта--> 
-        {% include "webexample/includes/head_board.html" %}
-    </div>
+        
+            {% include "webexample/includes/head_board.html" %}
+        
+
+    
+    
+                 
+    
     <!--Блок для карты с полями-->
-    <div class="map_box">
-        {% include "webexample/includes/main_block.html" %}
-    </div>
+        <div class="map_box">
+            {% include "webexample/includes/main_block.html" %}
+        </div>
     <!--Блок для вывода кабелей-->
-    <div>
-     <!--Подготавливаем место для вывода подходящих кабелей
-    С помощью логи Django тут будет вставлятся ифформация о кабелях-->
-    {% block content %}
-    {% endblock %}
+        
+         <!--Подготавливаем место для вывода подходящих кабелей
+        С помощью логи Django тут будет вставлятся ифформация о кабелях-->
+        
+        {% block content %}
+        {% endblock %}
+        
+
     </div>
-</div>
 </body>
 </html>

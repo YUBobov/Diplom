@@ -1,81 +1,31 @@
-select {
-	width: 50%;
+.map {
+		height: 600px;
+ 	
 }
+.main-block{
+	padding-top: 1%;
+	padding-bottom: 1%;
+	background-color: #EFECE4;
 
-.map_box {
-	display: flex;
-	flex-direction: row;
-  	justify-content: center;
-  	align-items:center;
-}
 
-.map{
-	width: 600px; 
-	height: 400px;
- 	float: left;
- 	display: block
-}
-
-.sidebar {
-	width: 40%;
-	display: block;
-	margin-top: 0px; 
-	margin-left: 15px;
-
-	
-}
-
-.sidebar h2{
-	font: normal 200% 'century gothic', arial, sans-serif;
-	padding-top: 0px;
-	margin-top: 0px;
-	color: #5F9EA0;
-}
-
-.field {
-	clear: both;
-	text-align: right;
-	line-height:25px;
-	
 }
 
 
-.field p {
-	float:left;
-	margin-top: 0px;
-	padding-right:10px;
+label {
+	font-size: 200%;
 }
 
-
-.test {
-	float: left;
-}
-
-
-
-.button {
-	margin-top: 10px;
-	float: right;
-	width: 50%;
-	/*height:  400px;*/
-	display:inline-block;
-	border: none;
-	background-color: #87CEFA;
-	border-radius: 3px;
-	box-shadow: 0 4px 0 #4682B4;
-	transition: all .15s ease;
+h1 {
 	text-align: center;
+	letter-spacing: 3px;
+	color: #023B51 !important;
 }
 
-.button:hover , .button:focus{
-	color: #fff;
-	text-decoration: none
-}
+button {
+	margin-top: 4%;
+	background: #001F2E !important;
+	color: #EFECE4 !important;
+	text-transform: uppercase;
 	
-.button:hover{
-	background-color: #00BFFF
 }
 
-.button:active{
-	background-color: #6495ED
-}
