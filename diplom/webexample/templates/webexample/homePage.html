@@ -22,6 +22,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'webexample/CSS/style_main_block.css' %}">
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'webexample/CSS/search_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'webexample/CSS/style_question_block.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'webexample/CSS/style_info_block.css' %}">
+
 </head>
 
 <body>
@@ -55,6 +58,8 @@
         {% block content %}
         {% endblock %}
         
+        {% include "webexample/includes/question_block.html" %}
+        {% include "webexample/includes/info_block.html" %}
 
     </div>
 </body>

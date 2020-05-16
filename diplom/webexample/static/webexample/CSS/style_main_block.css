@@ -12,10 +12,11 @@
 
 
 label {
-	font-size: 200%;
+	font-size: 150%;
 }
 
 h1 {
+	padding-bottom: 2%;
 	text-align: center;
 	letter-spacing: 3px;
 	color: #023B51 !important;
