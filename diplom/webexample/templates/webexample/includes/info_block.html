@@ -1,6 +1,6 @@
 {% load static %}
 {% block content %}
-<div class="container-fluid info-block">
+<div class="container-fluid info-block" id="info">
 	<div class="container info-content">
 		<h1 >О нас</h1>
 		<div class="row">
@@ -8,7 +8,7 @@
 			<div class="card-deсk">
 				
 				<div class="col-lg-4 col-xs-12">
-					<div class="card">
+					<div class="card shadow">
 					<div class="card-body">
 						<img class="shadow rounded-circle card-img-top" src="{% static '/webexample/images/bet.png' %}" >
 						<h4 class="card-title text-center">Трофимова Кристина</h4>
@@ -19,7 +19,7 @@
 			
 			
 				<div class="col-lg-4 col-xs-12">
-					<div class="card">
+					<div class="card shadow">
 						<div class="card-body">
 							<img class="shadow rounded-circle card-img-top" src="{% static '/webexample/images/mister.png' %}" >
 							<h4 class="card-title text-center">Теплоухов Андрей</h4>
@@ -29,7 +29,7 @@
 				</div>
 		
 				<div class="col-lg-4 col-xs-12">
-					<div class="card">	
+					<div class="card shadow">	
 						<div class="card-body">
 							<img class="shadow rounded-circle card-img-top" src="{% static '/webexample/images/morti.png' %}" >
 							<h4 class="card-title text-center">Бобов Юрий</h4>
@@ -43,7 +43,7 @@
 	</div>
 </div>
 
-<footer>
+<footer id ="contact">
 	<div class="container-fluid block-footer">
 		
 			<p class="text-right p-footer">kabels_rf@gmail.com</p>

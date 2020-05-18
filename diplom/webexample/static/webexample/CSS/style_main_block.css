@@ -3,11 +3,11 @@
  	
 }
 .main-block{
-	padding-top: 1%;
-	padding-bottom: 1%;
-	background-color: #EFECE4;
+	padding: 1% 5%;
+}
 
-
+.map_box {
+	background-color: #EFECE4 ;
 }
 
 
@@ -23,10 +23,16 @@ h1 {
 }
 
 button {
-	margin-top: 4%;
+	margin: 4% 0;
 	background: #001F2E !important;
 	color: #EFECE4 !important;
 	text-transform: uppercase;
 	
+}
+
+@media (max-device-width: 768px){
+	.main-block {
+		padding: 1% 0;
+	}
 }
 
