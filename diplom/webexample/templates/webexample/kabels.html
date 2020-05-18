@@ -29,8 +29,12 @@
                 {% for kab in bd %}
                <li class="list-group-item d-flex justify-content-between align-items-center shadow">
                    <h3><a href="{{ kab.link }}" >{{ kab.name }}</a></h3>
-                   <!--<p> {{ kab.volokno }} волокна </p>-->
+                   <!--Если цена не указана на сайте-->
+                   {% if kab.price != 0 %}
                    <p class=price>{{ kab.price }} руб.</p>
+                   {% else %}
+                   <p class=price>уточняйте у производителя</p>
+                   {% endif %}
                </li>  
                {%  endfor %}
            </ul>
@@ -39,8 +43,6 @@
            
         </div>
 </div>
-
-
 
 <!--Если соответсвий найдено не было-->
 {% else %}
