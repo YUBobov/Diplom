@@ -32,8 +32,8 @@ function init() {
 }
 }
 
-/*
-route.model.events.add('requestsuccess', function () {
+
+/*route.model.events.add('requestsuccess', function () {
 
             var activeRoute = route.getActiveRoute();
             if (activeRoute) {
