@@ -30,6 +30,7 @@
       		  <div class="form-group">
               <label class="text-black-50" for="formControlSelect2">Количество волокон:</label> 
                 <select class="form-control form-control-lg form-control-xs shadow" id = "formControlSelect2" name="vol">
+                  <option value="0">Не выбрано</option>
                   <!--Добавление в форму значений волокон из таблицы-->
                   {% for vol in allVol %}
                   <option value="{{ vol }}">{{ vol }}</option> 
@@ -42,7 +43,7 @@
                 <!--Добавление в форму значений кН из таблицы-->
                 {% for kn in allKn %}
                 {% if kn == 0 %}
-                <option value="0">0</option>
+                <option value="0">Не выбрано</option>
                 {% else %}
                 <option value="{{ kn }}">{{ kn }}</option>
                 {% endif %}
