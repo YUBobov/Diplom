@@ -1,5 +1,5 @@
 p {
-	font-size: 150% ;
+	font-size: 110% ;
 	color: #023B51 !important;
 }
 
@@ -12,8 +12,8 @@ h3>a.hover {
 
 }
 
-.result-block {
-	
+h3 {
+	font-size: 110% ;
 }
 
 .list-group-item {
@@ -30,6 +30,6 @@ h3>a.hover {
 
 }
 
-.price {
+.price, .price a {
 	color: #87B749 !important;
 }

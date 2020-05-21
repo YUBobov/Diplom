@@ -14,7 +14,7 @@
          	<form>
          		<div class="form-group">
               <label class="text-black-50" for="formControlSelect1">Подкатегории типов кабеля:</label> 
-              <select class="form-control form-control-lg form-control-xs shadow" id = "formControlSelect1" name="types">
+              <select class="form-control form-control  shadow" id = "formControlSelect1" name="types">
                   <!--тут потом нужно будет в value названия таблиц прописать-->
                   <option value="None">Не выбрано</option> 
                   <option value="FTTx">FTTx</option> 
@@ -29,7 +29,7 @@
               </div>
       		  <div class="form-group">
               <label class="text-black-50" for="formControlSelect2">Количество волокон:</label> 
-                <select class="form-control form-control-lg form-control-xs shadow" id = "formControlSelect2" name="vol">
+                <select class="form-control form-control form-control-xs shadow" id = "formControlSelect2" name="vol">
                   <option value="0">Не выбрано</option>
                   <!--Добавление в форму значений волокон из таблицы-->
                   {% for vol in allVol %}
@@ -39,7 +39,7 @@
               </div>
               <div class="form-group">
             <label class="text-black-50" for="formControlSelect3">Количество кН:</label> 
-              <select class="form-control form-control-lg form-control-xs shadow" id = "formControlSelect3" name="kn">
+              <select class="form-control form-control shadow" id = "formControlSelect3" name="kn">
                 <!--Добавление в форму значений кН из таблицы-->
                 {% for kn in allKn %}
                 {% if kn == 0 %}

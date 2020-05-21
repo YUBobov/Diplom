@@ -5,15 +5,11 @@
 	width:100%;
 	padding:0;
 	border: none;
-
 }
-
 
 .nav-item a {
-	font-size: 150%;
+	font-size: 110%;
 }
-
-
 
 .back {
 	background-color: transparent;
@@ -22,10 +18,19 @@
 	background-repeat: no-repeat;
 	background-image:url("../images/Shapka.png");
 	height:250px;
-
-	
 }
 
 .navbar-toggler{
 	margin: 1% 1%;
+}
+
+
+@media (max-width: 768px) {
+	.navbar-nav>li {
+		float:none;
+	}
+
+	.navbar-nav {
+		text-align: center;
+	}
 }
