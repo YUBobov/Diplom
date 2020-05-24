@@ -48,12 +48,12 @@ def kabels(request):
         if (request.POST["vol"] == "None") and (request.POST["kn"] == "None"):
             #С помощью метода filter выбираем необходимые нам значения, которые были заданы в таблице
             #Модификатор __gte выбирает знчение в поле больше или равное заданному
-            context = {'bd':bd.objects.filter(volokno__gte=0, kN__gte=0)}
+            context = {'bd':bd.objects.all()}
         #Иначе происходит проверка по параметрам в отдельности
         elif request.POST["vol"] == "None":
-            context = {'bd':bd.objects.filter(volokno=request.POST["vol"])}
-        elif request.POST["kn"] == "None":
             context = {'bd':bd.objects.filter(volokno=request.POST["kn"])}
+        elif request.POST["kn"] == "None":
+            context = {'bd':bd.objects.filter(volokno=request.POST["vol"])}
         else:     
             context = {'bd':bd.objects.filter(volokno=request.POST["vol"], kN=request.POST["kn"])}
         #Обхединяем словарь с данными о кабелях и словарь полей
