@@ -46,7 +46,7 @@ def kabels(request):
         #Передаём данные с переходоим на страцу с их выводом     
         #С помощью метода filter выбираем необходимые нам значения, которые были заданы в таблице
         #Модификатор gte выбирает знчение в поле больше или равное заданному
-        context = {'bd':bd.objects.filter(volokno__gte=request.POST["vol"], kN__gte=request.POST["kn"])}
+        context = {'bd':bd.objects.filter(volokno=request.POST["vol"], kN=request.POST["kn"])}
         #Обхединяем словари 
         context.update(polya())
     #Если такой таблицы нет, то передаём пустое значение
