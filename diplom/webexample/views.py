@@ -43,14 +43,24 @@ def kabels(request):
         #По этому значению обращаемся к словарю с таблицами
         #Из словаря выбирается необходимая таблица
         bd = allTabls.get(request.POST["types"])
-        #Передаём данные с переходоим на страцу с их выводом     
-        #С помощью метода filter выбираем необходимые нам значения, которые были заданы в таблице
-        #Модификатор gte выбирает знчение в поле больше или равное заданному
-        context = {'bd':bd.objects.filter(volokno__gte=request.POST["vol"], kN__gte=request.POST["kn"])}
-        #Обхединяем словари 
+        #Производится проверка параметров для филтьтрации
+        #Если в количестве волокон и кН указан параметр "Не выбрано"
+        if (request.POST["vol"] == "None") and (request.POST["kn"] == "None"):
+            #С помощью метода filter выбираем необходимые нам значения, которые были заданы в таблице
+            #Модификатор __gte выбирает знчение в поле больше или равное заданному
+            context = {'bd':bd.objects.all()}
+        #Иначе происходит проверка по параметрам в отдельности
+        elif request.POST["vol"] == "None":
+            context = {'bd':bd.objects.filter(volokno=request.POST["kn"])}
+        elif request.POST["kn"] == "None":
+            context = {'bd':bd.objects.filter(volokno=request.POST["vol"])}
+        else:     
+            context = {'bd':bd.objects.filter(volokno=request.POST["vol"], kN=request.POST["kn"])}
+        #Обхединяем словарь с данными о кабелях и словарь полей
         context.update(polya())
     #Если такой таблицы нет, то передаём пустое значение
     else:
         #Выводим словарь для заполнения полей формы
         context = polya()
+        #Передаём данные с переходоим на страцу с их выводом
     return render(request, 'webexample/kabels.html', context)
