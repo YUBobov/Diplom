@@ -31,7 +31,7 @@
                    <h3><a href="{{ kab.link }}" >{{ kab.name }}</a></h3>
                    <!--Если цена не указана на сайте-->
                    {% if kab.price != 0 %}
-                   <p class=price><a href="{{ kab.link }}" >{{ kab.price}} руб.</a></p>
+                   <p class=price ><a href="{{ kab.link }}" id = pricee >{{ kab.price}}</a> руб.</p>
                    
                    {% else %}
                    <p class=price><a href="{{ kab.link }}">уточняйте у производителя</a></p>

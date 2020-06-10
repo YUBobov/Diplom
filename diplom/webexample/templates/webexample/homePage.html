@@ -14,10 +14,6 @@
     <link href="{% static 'webexample/css/bootstrap-grid.min.css' %}" rel="stylesheet">
     <link href="{% static 'webexample/css/bootstrap-reboot.min.css' %}" rel="stylesheet">
     <!--Yandex API-->
-    <script src="https://api-maps.yandex.ru/2.0-stable/?apikey=24998db7-aa04-4bf2-a7e0-cab9f2b666dd&load=package.full&lang=ru-RU" type="text/javascript"></script> 
-    <!-- Yandex js-->
-    <script type="text/javascript" src="{% static 'webexample/js/YandexApi.js' %}"></script>
-
     <link rel="stylesheet" type="text/css" href="{% static 'webexample/CSS/style_head.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'webexample/CSS/style_main_block.css' %}">
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
@@ -28,10 +24,7 @@
 </head>
 
 <body>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src=" {% static 'webexample/js/bootstrap.min.js' %} " ></script>
-    <script src=" {% static 'webexample/js/bootstrap.bundle.min.js' %} " ></script>
+    
     <div >   
     <!--Блок для шапки-->
     
@@ -58,5 +51,12 @@
         {% include "webexample/includes/info_block.html" %}
 
     </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src=" {% static 'webexample/js/bootstrap.min.js' %} " ></script>
+    <script src=" {% static 'webexample/js/bootstrap.bundle.min.js' %} " ></script>
+     <script src="https://api-maps.yandex.ru/2.0-stable/?apikey=24998db7-aa04-4bf2-a7e0-cab9f2b666dd&load=package.full&lang=ru-RU" type="text/javascript"></script> 
+     <!-- Yandex js-->
+    <script type="text/javascript" src="{% static 'webexample/js/YandexApi.js' %}"></script>
 </body>
 </html>
