@@ -7,17 +7,38 @@
 	border: none;
 }
 
+
+
+.instr{
+	
+	text-align: right;
+	color: #808080 !important;
+	margin-bottom: 0;
+	font-size: 90%;
+}
+
+.head_instr {
+	float:right;
+	text-align: right;
+	color: white !important;
+	margin-bottom: 1%;
+
+}
+
 .nav-item a {
 	font-size: 110%;
 }
 
 .back {
+	content: "";
 	background-color: transparent;
 	border: none;
 	background-size:cover;
 	background-repeat: no-repeat;
 	background-image:url("../images/Shapka.png");
 	height:250px;
+	padding:0;
+	
 }
 
 .navbar-toggler{
@@ -32,5 +53,11 @@
 
 	.navbar-nav {
 		text-align: center;
+	}
+}
+
+@media (max-device-width: 1306px){
+	.instraction {
+		display: none;
 	}
 }

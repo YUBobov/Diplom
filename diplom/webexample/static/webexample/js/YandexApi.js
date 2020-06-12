@@ -21,9 +21,7 @@ function init() {
 	
 	//Функция подсчета расстояния карта
 	map.behaviors.get('ruler').geometry.events.add('change', function(e){
-		//console.log("privet");
 		line = map.behaviors.get('ruler').geometry.getCoordinates();
-		//console.log(line.length);
 		dista = 0;
 	    for (let i = 0; i < line.length-1; i++) {
 	    		dista += ymaps.coordSystem.geo.getDistance(line[i],line[i+1]);}
@@ -32,7 +30,6 @@ function init() {
 	});
 
 	if (sessionStorage.getItem('local')!= null){
-		//console.log("gdf", sessionStorage.getItem('local'));
 		document.querySelectorAll('#pricee').forEach(function(element){
 			//console.log(element.innerHTML);
 			let money=element.innerHTML;
