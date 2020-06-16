@@ -34,7 +34,7 @@ function init() {
 			//console.log(element.innerHTML);
 			let money=element.innerHTML;
 			dis=sessionStorage.getItem('local');
-			let result = Math.round(money*Math.ceil(dis)/1000);
+			let result = Math.round(money*Math.ceil(dis)/1000*1,3);
 			element.innerHTML=result;
 		});
 	}
