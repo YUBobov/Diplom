@@ -52,7 +52,7 @@ def kabels(request):
             context = {'bd':bd.objects.all().order_by('price')}
         #Иначе происходит проверка по параметрам в отдельности
         elif request.POST["vol"] == "None":
-            context = {'bd':bd.objects.order_by('price').filter(volokno=request.POST["kn"])}
+            context = {'bd':bd.objects.order_by('price').filter(kN=request.POST["kn"])}
         elif request.POST["kn"] == "None":
             context = {'bd':bd.objects.order_by('price').filter(volokno=request.POST["vol"])}
         else:     
