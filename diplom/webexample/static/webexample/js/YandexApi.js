@@ -27,6 +27,7 @@ function init() {
 	    		dista += ymaps.coordSystem.geo.getDistance(line[i],line[i+1]);}
 	    //console.log(dista);
 	    sessionStorage.setItem('local',dista);
+	   document.getElementById('dist').innerHTML = Math.ceil(sessionStorage.getItem('local'))+"м";
 	});
 
 	if (sessionStorage.getItem('local')!= null){
@@ -34,10 +35,20 @@ function init() {
 			//console.log(element.innerHTML);
 			let money=element.innerHTML;
 			dis=sessionStorage.getItem('local');
-			let result = Math.round(money*Math.ceil(dis)/1000*1,3);
+			let result = Math.round(money*Math.ceil(dis)/1000*1.3);
 			element.innerHTML=result;
+
 		});
+
 	}
+
+	document.getElementById('dist').innerHTML = Math.ceil(sessionStorage.getItem('local'))+"м";
+
+
+	document.getElementById('main').onclick = function(){
+		sessionStorage.clear("local");
+	}
+	
 
 	/*document.querySelectorAll('.form-control').forEach(function(element){
 		element.onchange= function (){
